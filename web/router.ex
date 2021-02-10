@@ -18,10 +18,16 @@ defmodule Discuss.Router do
     pipe_through(:browser)
 
     get("/", TopicController, :index)
-    get("/topics/new", TopicController, :new)
-    post("/topics/create", TopicController, :create)
-    get("/topics/:id/edit", TopicController, :edit)
-    put("/topics/:id", TopicController, :update)
+    # get("/topics/new", TopicController, :new)
+    # post("/topics/create", TopicController, :create)
+    # get("/topics/:id/edit", TopicController, :edit)
+    # put("/topics/:id", TopicController, :update)
+    # delete("/topics/:id", TopicController, :delete)
+
+    # * The following is a phoenix helper for creating restful resources.
+    # * It is an alternative approach to manually writing all the code above.
+
+    resources("/topics", TopicController)
   end
 
   # Other scopes may use custom stacks.
